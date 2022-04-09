@@ -1,0 +1,23 @@
+.Card {
+  position: relative;
+  color: white;
+  outline: 1px solid orange;
+  padding-top: 70%;
+  background-size: 100%;
+}
+
+.Card__info {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.Card__buttons-wrapper {
+  display: flex;
+}
+
+.Card__title {
+  color: black;
+}
