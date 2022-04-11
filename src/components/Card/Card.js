@@ -6,9 +6,10 @@ import { useEffect, useState } from "react";
 import { getProjectImage } from "../../firebase/firebase-api";
 import ReactParallaxTilt from "react-parallax-tilt";
 import background from "../../assets/img/spinner.svg";
+import CardTags from "./CardTags/CardTags";
 
 const Card = ({ card }) => {
-  const { image, name, projectSource } = card;
+  const { image, name, deploy, github, importantTech, otherTech, id } = card;
 
   const [imageUrl, setImageUrl] = useState(null);
   const [imageIsLoading, setImageIsLoading] = useState(true);
@@ -32,7 +33,7 @@ const Card = ({ card }) => {
       tiltMaxAngleX={13}
       tiltMaxAngleY={13}
       tiltReverse={true}
-      scale={1.06}
+      scale={1.08}
     >
       <li
         className="Card"
@@ -44,16 +45,23 @@ const Card = ({ card }) => {
       >
         <div className={`Card__info ${visibilityClass}`}>
           <h3 className="Card__title">{name}</h3>
+          {importantTech && (
+            <CardTags
+              importantTech={importantTech}
+              otherTech={otherTech}
+              id={id}
+            />
+          )}
           <div className="Card__buttons-wrapper">
             <Button
-              className="Card__button p-button-rounded p-button-sm p-button-raised"
-              onClick={() => window.open(projectSource, "_blank")}
+              className="Card__button p-button-rounded p-button-raised"
+              onClick={() => window.open(deploy, "_blank")}
             >
               Visit Website
             </Button>
             <Button
-              className="Card__button p-button-rounded p-button-sm p-button-secondary p-button-raised"
-              onClick={() => window.open(projectSource, "_blank")}
+              className="Card__button p-button-rounded p-button-secondary p-button-raised"
+              onClick={() => window.open(github, "_blank")}
             >
               Github
             </Button>
