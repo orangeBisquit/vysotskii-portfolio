@@ -3,7 +3,27 @@
   margin: 0;
   padding: 5rem 0;
   list-style: none;
-  column-gap: 4rem;
+  column-gap: 3.5rem;
   grid-template-columns: 1fr 1fr 1fr;
-  row-gap: 4rem;
+  row-gap: 3.5rem;
+
+  @media (max-width: 1800px) {
+    column-gap: 3rem;
+    row-gap: 3rem;
+  }
+
+  @media (max-width: 1600px) {
+    column-gap: 2.5rem;
+    row-gap: 2.5rem;
+  }
+
+  @media (max-width: 1440px) {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3rem;
+    row-gap: 3rem;
+  }
+
+  @media (max-width: 1000px) {
+    grid-template-columns: 1fr;
+  }
 }
