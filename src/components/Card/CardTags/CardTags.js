@@ -1,3 +1,5 @@
+import "./CardTags.scss";
+
 export const CardTags = ({ importantTech, otherTech, id }) => {
   const combinedTech = [...importantTech, ...otherTech];
   return (
@@ -5,7 +7,7 @@ export const CardTags = ({ importantTech, otherTech, id }) => {
       {combinedTech.map((tag, index) => {
         return (
           <li className="CardTags__item" key={id + index}>
-            {tag}
+            {`#${tag}`}
           </li>
         );
       })}

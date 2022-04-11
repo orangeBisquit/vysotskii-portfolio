@@ -1,0 +1,36 @@
+.CardTags {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.CardTags__item {
+  position: relative;
+  z-index: 1;
+  display: block;
+  padding: 0.4rem 0.6rem;
+  background-color: red;
+  border-radius: 0.5rem;
+  font-size: 1.4rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  background-color: #f07800;
+  color: #302f34;
+  font-weight: 700;
+
+  &:nth-child(2n) {
+    background-color: #e08509;
+  }
+
+  &:nth-child(3n) {
+    background-color: #c09e1a;
+  }
+
+  &:nth-child(4n) {
+    background-color: #a0b72b;
+  }
+
+  &:nth-child(5n) {
+    background-color: #90c434;
+  }
+}
