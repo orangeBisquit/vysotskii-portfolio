@@ -1,29 +1,14 @@
 import Card from "../Card/Card";
 import "./CardsList.scss";
-import { db } from "../../firebase-config";
-import { collection, getDocs } from "firebase/firestore";
-import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 function CardsList() {
-  const [projects, setProjects] = useState([]);
-  const projectsCollectionRef = collection(db, "/projects");
-
-  useEffect(() => {
-    const getProject = async () => {
-      const data = await getDocs(projectsCollectionRef);
-      setProjects(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    };
-
-    getProject();
-    console.log(projects);
-  }, []);
-
-  console.log(projects);
+  const projects = useSelector((state) => state.projects.items);
 
   return (
     <ul className="CardsList">
-      {projects.map((card) => (
-        <Card card={card} />
+      {projects.map((card, index) => (
+        <Card card={card} key={index} />
       ))}
     </ul>
   );
