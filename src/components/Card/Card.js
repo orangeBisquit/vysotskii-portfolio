@@ -15,7 +15,9 @@ const Card = ({ card }) => {
   const [imageUrl, setImageUrl] = useState(null);
   const [imageIsLoading, setImageIsLoading] = useState(true);
 
-  const [tooltipVisible, setTooltipVisible] = useState();
+  const isPortfolio = image === "portfolio";
+
+  const [tooltipVisible, setTooltipVisible] = useState(true);
 
   const visibilityClass = tooltipVisible ? `Card__info--visible` : null;
   const isTouchDeviceClass = isTouchDevice() && `Card__info--always-visible`;
@@ -57,12 +59,15 @@ const Card = ({ card }) => {
             />
           )}
           <div className="Card__buttons-wrapper">
-            <Button
-              className="Card__button p-button-rounded p-button-raised"
-              onClick={() => window.open(deploy, "_blank")}
-            >
-              Visit Website
-            </Button>
+            {!isPortfolio && (
+              <Button
+                className="Card__button p-button-rounded p-button-raised"
+                onClick={() => window.open(deploy, "_blank")}
+              >
+                Visit Website
+              </Button>
+            )}
+
             <Button
               className="Card__button p-button-rounded p-button-secondary p-button-raised"
               onClick={() => window.open(github, "_blank")}

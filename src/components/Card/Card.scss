@@ -1,12 +1,16 @@
 .Card {
   position: relative;
-  padding-top: 70%;
+  padding-top: 80%;
   background-size: 100%;
   background-position: center;
   border-radius: 2rem;
   box-shadow: 0 0 50px #4547a9;
   border: 3px solid #4547a9;
   transition: all 0.1s ease;
+
+  @media (max-width: 700px) {
+    padding-top: 85%;
+  }
 
   &:hover {
     box-shadow: 0 0 50px #eb9605;
@@ -106,7 +110,7 @@
     border-radius: 10px;
     color: #ef820d;
     background-color: rgba(0, 0, 0, 0.65);
-    font-size: 34px;
+    font-size: 33px;
 
     @media (max-width: 1800px) {
       font-size: 28px;
@@ -192,14 +196,9 @@
       padding: 0.75rem 1.15rem;
     }
 
-    @media (max-width: 580px) {
-      font-size: 16px;
-      padding: 0.5rem 1rem;
-    }
-
-    @media (max-width: 480px) {
-      font-size: 14px;
-      padding: 0.3rem 0.7rem;
+    @media (max-width: 400px) {
+      font-size: 15px;
+      padding: 0.6rem 1rem;
     }
   }
 }
