@@ -17,7 +17,7 @@ const Card = ({ card }) => {
 
   const isPortfolio = image === "portfolio";
 
-  const [tooltipVisible, setTooltipVisible] = useState(true);
+  const [tooltipVisible, setTooltipVisible] = useState();
 
   const visibilityClass = tooltipVisible ? `Card__info--visible` : null;
   const isTouchDeviceClass = isTouchDevice() && `Card__info--always-visible`;
