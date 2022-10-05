@@ -6,33 +6,25 @@ import { useEffect, useState } from "react";
 import { getProjectImage } from "../../firebase/firebase-api";
 import ReactParallaxTilt from "react-parallax-tilt";
 import background from "../../assets/img/spinner.svg";
+import device from "../../assets/img/projects/device.webp";
 import CardTags from "./CardTags/CardTags";
-import { isTouchDevice } from "../../utils/utils";
+import utils from "../../utils/utils";
+
+import Images from "../../utils/images";
 
 const Card = ({ card }) => {
   const { image, name, deploy, github, importantTech, otherTech, id } = card;
-
-  const [imageUrl, setImageUrl] = useState(null);
-  const [imageIsLoading, setImageIsLoading] = useState(true);
 
   const isPortfolio = image === "portfolio";
 
   const [tooltipVisible, setTooltipVisible] = useState(false);
 
   const visibilityClass = tooltipVisible ? `Card__info--visible` : null;
-  const isTouchDeviceClass = isTouchDevice() && `Card__info--always-visible`;
-  const backgroundImg = imageIsLoading
-    ? `url("${background}")`
-    : `url("${imageUrl}")`;
+  const isTouchDeviceClass = utils.isTouchDevice() && `Card__info--always-visible`;
 
-  const cardTiltMaxAngle = !isTouchDevice() ? 13 : 0;
+  const backgroundImg = `url("${Images[image]}")`;
 
-  useEffect(() => {
-    getProjectImage(image, "webp").then((url) => {
-      setImageUrl(url);
-      setTimeout(() => setImageIsLoading(false), 300);
-    });
-  }, []);
+  const cardTiltMaxAngle = !utils.isTouchDevice() ? 13 : 0;
 
   return (
     <ReactParallaxTilt
