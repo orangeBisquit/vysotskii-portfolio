@@ -1,39 +1,49 @@
+$c-gamboge: #eb9605;
+$c-governor-bay: #4547a9;
 .Card {
   position: relative;
   padding-top: 80%;
   background-size: 100%;
   background-position: center;
   border-radius: 2rem;
-  box-shadow: 0 0 50px #4547a9;
-  border: 3px solid #4547a9;
+  box-shadow: 0 0 50px $c-governor-bay;
+  border: 3px solid $c-governor-bay;
   transition: all 0.1s ease;
-
-  @media (max-width: 700px) {
-    padding-top: 85%;
-  }
-
+  opacity: 0;
+  transform: scale(0.8);
   &:hover {
-    box-shadow: 0 0 50px #eb9605;
+    box-shadow: 0 0 50px $c-gamboge;
     border: 1px solid black;
     margin-bottom: -15px;
   }
-
+  @media (max-width: 700px) {
+    padding-top: 85%;
+  }
   @media (max-width: 1440px) {
-    box-shadow: 0 0 30px #4547a9;
-
+    box-shadow: 0 0 30px $c-governor-bay;
     &:hover {
-      box-shadow: 0 0 30px #eb9605;
+      box-shadow: 0 0 30px $c-gamboge;
       margin-bottom: -25px;
     }
   }
-
   @media (max-width: 1000px) {
     &:hover {
       margin-bottom: 4px;
     }
   }
 
-  .Card__info {
+  &._darkened::before {
+    border-radius: 2rem;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(black, 0.5);
+  }
+
+  &__info {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -96,12 +106,10 @@
       opacity: 1;
     }
   }
-
-  .Card__buttons-wrapper {
+  &__buttons-wrapper {
     display: flex;
   }
-
-  .Card__title {
+  &__title {
     position: relative;
     z-index: 1;
     margin: 0;
@@ -153,8 +161,7 @@
       display: none;
     }
   }
-
-  .Card__button {
+  &__button {
     display: block;
     transition: all 0.6 ease;
     margin-right: 1rem;
@@ -200,5 +207,14 @@
       font-size: 15px;
       padding: 0.6rem 1rem;
     }
+  }
+  &__message {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    color: #fff;
   }
 }

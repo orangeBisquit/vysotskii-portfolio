@@ -11,6 +11,12 @@ import sixCities from "../assets/img/projects/six-cities.webp";
 import smartDevice from "../assets/img/projects/smart-device.webp";
 import uber from "../assets/img/projects/uber.webp";
 import wayTravel from "../assets/img/projects/way-travel.webp";
+import sportlifeSchedule from "../assets/img/projects/sportlife-schedule.webp";
+import paywall from "../assets/img/projects/paywall.webp";
+import mintproxy from "../assets/img/projects/mintproxy.webp";
+import timestripe from "../assets/img/projects/timestripe.webp";
+import x5 from "../assets/img/projects/x5.webp";
+import nda from "../assets/img/projects/nda.webp";
 
 export default {
   "big-trip": bigTrip,
@@ -25,5 +31,11 @@ export default {
   "six-cities": sixCities,
   "smart-device": smartDevice,
   uber: uber,
-  "way-travel": wayTravel
+  "way-travel": wayTravel,
+  "sportlife-schedule": sportlifeSchedule,
+  paywall: paywall,
+  mintproxy: mintproxy,
+  timestripe: timestripe,
+  x5: x5,
+  nda: nda,
 }
