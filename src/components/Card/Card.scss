@@ -211,10 +211,15 @@ $c-governor-bay: #4547a9;
   &__message {
     position: absolute;
     text-align: center;
-    top: 50%;
+    top: 42%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 20px;
+    font-size: 27px;
     color: #fff;
+    &-count {
+      font-size: 60px;
+      font-weight: 700;
+      display: block;
+    }
   }
 }

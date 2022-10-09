@@ -5,6 +5,10 @@ import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 import { store } from "./store/store";
 import { fetchProjects } from "./store/slices/projectsSlice";
+import { gsap } from "gsap";
+import { Flip } from "gsap/dist/Flip";
+
+gsap.registerPlugin(Flip);
 
 store.dispatch(fetchProjects());
 

@@ -6,7 +6,7 @@ export const CardTags = ({ importantTech, otherTech, id }) => {
     <ul className="CardTags">
       {combinedTech.map((tag, index) => {
         return (
-          <li className="CardTags__item" key={id + index}>
+          <li className="CardTags__item" key={id + index.toString()}>
             {`#${tag}`}
           </li>
         );

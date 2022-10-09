@@ -1,3 +1,39 @@
 .ProjectsForm {
-  margin: 200px 0;
+  margin: 3rem 0 0;
+  background: rgba(27, 27, 27, 0.72);
+  border-radius: 8px;
+  border-radius: 1rem;
+  padding: 2rem;
+  &__top {
+    display: flex;
+    align-items: center;
+    column-gap: 3rem;
+  }
+  &__category {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    column-gap: 2rem;
+    outline: 1px dashed #f07800;
+    padding-right: 2rem;
+    padding-left: 1rem;
+  }
+  &__field {
+    display: flex;
+    align-items: center;
+  }
+  &__field-label {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-left: 0.7rem;
+    cursor: pointer;
+    color: #fff;
+  }
+  &__category-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-left: 0.7rem;
+    color: #fff;
+    text-decoration: underline;
+  }
 }

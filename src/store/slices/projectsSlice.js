@@ -13,7 +13,6 @@ export const fetchProjects = createAsyncThunk(
     const data = await getDocs(projectsCollectionRef);
     const projects = data.docs.map((doc) => ({
       ...doc.data(),
-      id: doc.id,
     }));
     return projects;
   }
