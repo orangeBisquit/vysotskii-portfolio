@@ -40,12 +40,12 @@ function ProjectForm() {
             <RadioButton inputId="type-all" value="all" name="city" onChange={(e) => handleTypeFilterChange(e)} checked={selectedTypeFilter === 'all'} />
             <label className="ProjectsForm__field-label" htmlFor="type-all">All</label>
           </div>
-          <div className="ProjectsForm__field ProjectsForm__field--personal" data-pr-tooltip="Show only my pet projects or projects that I've done though web dev courses">
+          <div className="ProjectsForm__field ProjectsForm__field--personal" data-pr-tooltip="Show only my pet projects or those that I did on my own while taking programming courses">
             <RadioButton inputId="type-personal" value="personal" name="city" onChange={(e) => handleTypeFilterChange(e)} checked={selectedTypeFilter === 'personal'} />
             <label className="ProjectsForm__field-label" htmlFor="type-personal">Personal</label>
             <Tooltip target=".ProjectsForm__field--personal" mouseTrack mouseTrackLeft={10} position="bottom" />
           </div>
-          <div className="ProjectsForm__field ProjectsForm__field--commercial" data-pr-tooltip="Show only commercial projects that I've done on my previoud jobs and I didn't signed NDA for">
+          <div className="ProjectsForm__field ProjectsForm__field--commercial" data-pr-tooltip="Show only commercial sites that were made at work">
             <RadioButton inputId="type-commercial" value="commercial" name="city" onChange={(e) => handleTypeFilterChange(e)} checked={selectedTypeFilter === 'commercial'} />
             <label className="ProjectsForm__field-label" htmlFor="type-commercial">Commercial</label>
             <Tooltip target=".ProjectsForm__field--commercial" mouseTrack mouseTrackLeft={10} position="bottom" />
