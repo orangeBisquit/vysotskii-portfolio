@@ -77,7 +77,7 @@ function CardsList() {
   const projectType = useSelector((state) => state.form.projectsType);
   const sortType = useSelector((state) => state.form.sortType);
 
-  const sortedProjects = sortByComplexity(projects);
+  const sortedProjects = sortNewFirst(projects);
 
   const cardListRef = useRef();
 
