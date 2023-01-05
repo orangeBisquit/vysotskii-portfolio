@@ -1,4 +1,5 @@
 @import "../../assets/style/variables";
+@import "../../assets/style/mixins";
 
 .Heading {
   font-size: 6rem;
@@ -6,28 +7,12 @@
   font-family: $font-nautilus;
   text-align: center;
   margin: 0;
-
-  @media (max-width: 1440px) {
-    font-size: 4.5rem;
-  }
-
-  @media (max-width: 1000px) {
-    font-size: 3rem;
-  }
-
-  @media (max-width: 850px) {
-    font-size: 2.5rem;
-  }
-
-  @media (max-width: 550px) {
-    font-size: 2rem;
-  }
-
-  @media (max-width: 430px) {
-    font-size: 1.7rem;
-  }
+  @include smoothValue("font-size", 40px, 96px, $mobile, $desktop);
 }
 
 .Heading__name {
   text-decoration: underline;
+  @media (max-width: $desktop-sm-2) {
+    display: block;
+  }
 }

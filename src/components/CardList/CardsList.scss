@@ -1,3 +1,5 @@
+@import "../../assets/style/variables";
+@import "../../assets/style/mixins";
 .CardsList {
   display: grid;
   margin: 0;
@@ -7,7 +9,8 @@
   grid-template-columns: 1fr 1fr 1fr;
   row-gap: 3.5rem;
   position: relative;
-
+  @include smoothValue("padding-top", 20px, 30px, $mobile, $desktop);
+  @include smoothValue("padding-bottom", 30px, 80px, $mobile, $desktop);
   @media (max-width: 1800px) {
     column-gap: 3rem;
     row-gap: 3rem;
@@ -16,14 +19,12 @@
   @media (max-width: 1600px) {
     column-gap: 2.5rem;
     row-gap: 2.5rem;
-    padding: 4rem 0;
   }
 
   @media (max-width: 1440px) {
     grid-template-columns: 1fr 1fr;
     column-gap: 3rem;
     row-gap: 3rem;
-    padding: 3rem 0;
   }
 
   @media (max-width: 1000px) {
@@ -33,7 +34,6 @@
   }
 
   @media (max-width: 600px) {
-    padding: 2rem 0;
     column-gap: 2rem;
     row-gap: 2rem;
   }

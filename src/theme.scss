@@ -1,3 +1,5 @@
+@import "./assets/style/mixins.scss";
+@import "./assets/style/variables.scss";
 :root {
   --surface-a: #ffffff;
   --surface-b: #f8f9fa;
@@ -7031,4 +7033,14 @@
 }
 .p-datatable .p-datatable-tbody > tr.p-datatable-dragpoint-bottom > td {
   box-shadow: inset 0 -2px 0 0 #f07800;
+}
+// My Custom Styles
+.p-dropdown {
+  @include smoothValue("width", 140px, 200px, $desktop-sm, $desktop);
+}
+.p-dropdown .p-dropdown-label {
+  @include smoothValue("font-size", 18px, 24px, $desktop-sm, $desktop);
+}
+.p-dropdown-panel .p-dropdown-item {
+  @include smoothValue("font-size", 18px, 24px, $desktop-sm, $desktop);
 }
