@@ -45,7 +45,7 @@ function ProjectForm() {
     <form className="ProjectsForm">
       <div className="ProjectsForm__top">
         <div className={CLASSES['category--filters']}>
-          <h3 class="ProjectsForm__category-title">Filter:</h3>
+          <h3 className="ProjectsForm__category-title">Filter:</h3>
           <div className={CLASSES['fields--filters']}>
             <div className="ProjectsForm__field">
               <RadioButton
@@ -91,7 +91,7 @@ function ProjectForm() {
           </div>
         </div>
         <div className="ProjectsForm__category">
-          <h3 class="ProjectsForm__category-title">Sort:</h3>
+          <h3 className="ProjectsForm__category-title">Sort:</h3>
           <div className="ProjectsForm__fields">
             <Dropdown
               options={sortOptions}

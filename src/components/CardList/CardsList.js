@@ -37,7 +37,8 @@ const animateOnTypeChange = (projectType) => {
 
 const animateOnSort = (sortType, projects) => {
   const cards = gsap.utils.toArray('.CardWrapper');
-  const state = Flip.getState(cards);
+
+  gsap.to(cards, { opacity: 0 });
 
   let projectsData = projects;
 
@@ -56,20 +57,16 @@ const animateOnSort = (sortType, projects) => {
     card.style.order = index;
   });
 
-  Flip.from(state, {
-    duration: 1.2,
-    ease: "power1.inOut",
-    scale: true,
-    absolute: true,
-    absoluteOnLeave: true,
-  });
+  setTimeout(() => {
+    gsap.fromTo(cards, { opacity: 0, duration: 0.02, delay: 0.04, }, { opacity: 1 });
+  }, 300);
 }
 
 
 const animateOnLoad = (cardListRef) => {
   const q = gsap.utils.selector(cardListRef);
 
-  gsap.fromTo(q(".Card"), { opacity: 0, scale: 0.8, duration: 0.12, delay: 0.1, ease: 'back.out(1.4)' }, { opacity: 1, scale: 1, stagger: 0.13, });
+  gsap.fromTo(q(".Card"), { opacity: 0, scale: 0.8, duration: 0.02, delay: 0.04, ease: 'back.out(1.4)' }, { opacity: 1, scale: 1, stagger: 0.1, });
 };
 
 function CardsList() {
