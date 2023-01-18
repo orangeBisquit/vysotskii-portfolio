@@ -89,6 +89,7 @@ function CardsList() {
 
   useEffect(() => {
     animateOnSort(sortType, sortedProjects);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sortType]);
 
   if (sortedProjects.length === 0) {
