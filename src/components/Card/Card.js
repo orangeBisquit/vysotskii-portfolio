@@ -2,13 +2,11 @@ import "./Card.scss";
 import "../../theme.scss";
 import "primereact/resources/primereact.min.css";
 
-import background from "../../assets/img/spinner.svg";
 import Images from "../../utils/images";
 
 import { Button } from "primereact/button";
 
-import { useState, useRef, useEffect } from "react";
-import { useSelector } from 'react-redux'
+import { useState, } from "react";
 import ReactParallaxTilt from "react-parallax-tilt";
 import CardTags from "./CardTags/CardTags";
 

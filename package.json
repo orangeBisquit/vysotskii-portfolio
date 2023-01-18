@@ -81,7 +81,8 @@
           [
             "babel-preset-react-app",
             false
-          ]
+          ],
+          "babel-preset-react-app/prod"
         ]
       }
     }

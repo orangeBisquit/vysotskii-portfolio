@@ -2,7 +2,7 @@ import Card from "../Card/Card";
 import "./CardsList.scss";
 import { useSelector } from "react-redux";
 import { useRef, useEffect } from "react";
-import { sortByComplexity, sortNewFirst, sortOldFirst } from "../../utils/projects-utils";
+import { sortNewFirst, sortOldFirst } from "../../utils/projects-utils";
 import { gsap } from "gsap";
 import { Flip } from "gsap/dist/Flip";
 
@@ -88,7 +88,7 @@ function CardsList() {
 
   useEffect(() => {
     animateOnSort(sortType, sortedProjects);
-  }, [sortType]);
+  }, [sortType, sortedProjects]);
 
   return (
     <ul className="CardsList" ref={cardListRef}>
