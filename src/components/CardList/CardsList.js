@@ -5,6 +5,7 @@ import { useRef, useEffect } from "react";
 import { sortNewFirst, sortOldFirst } from "../../utils/projects-utils";
 import { gsap } from "gsap";
 import { Flip } from "gsap/dist/Flip";
+import PageLoading from "../PageLoading/PageLoading";
 
 const animateOnTypeChange = (projectType) => {
   const cards = gsap.utils.toArray('.CardWrapper');
@@ -74,7 +75,7 @@ function CardsList() {
   const projectType = useSelector((state) => state.form.projectsType);
   const sortType = useSelector((state) => state.form.sortType);
 
-  const sortedProjects = sortNewFirst(projects);
+  let sortedProjects = sortNewFirst(projects);
 
   const cardListRef = useRef();
 
@@ -88,7 +89,11 @@ function CardsList() {
 
   useEffect(() => {
     animateOnSort(sortType, sortedProjects);
-  }, [sortType, sortedProjects]);
+  }, [sortType]);
+
+  if (sortedProjects.length === 0) {
+    return <PageLoading />
+  }
 
   return (
     <ul className="CardsList" ref={cardListRef}>
