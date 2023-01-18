@@ -1,5 +1,5 @@
 import "./ProjectForm.scss";
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { setProjectsType, setSort } from '../../store/slices/formSlice'
 import { useState } from "react";
 import { RadioButton } from 'primereact/radiobutton';

@@ -1,4 +1,4 @@
-export default {
+const utils = {
   isTouchDevice: () => {
     try {
       let prefixes = " -webkit- -moz- -o- -ms- ".split(" ");
@@ -27,3 +27,4 @@ export default {
     );
   }
 };
+export default utils;

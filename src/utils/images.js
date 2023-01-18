@@ -18,7 +18,7 @@ import timestripe from "../assets/img/projects/timestripe.webp";
 import x5 from "../assets/img/projects/x5.webp";
 import nda from "../assets/img/projects/nda.webp";
 
-export default {
+const images = {
   "big-trip": bigTrip,
   cat: cat,
   "ch-jewellery": chJewellery,
@@ -38,4 +38,5 @@ export default {
   timestripe: timestripe,
   x5: x5,
   nda: nda,
-}
+};
+export default images;
